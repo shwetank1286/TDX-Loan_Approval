@@ -1,0 +1,41 @@
+<apex:page showHeader="false" sidebar="false">
+
+    <h1>Smart Loan Chat</h1>
+
+    <script type='text/javascript'>
+
+        function initEmbeddedMessaging() {
+
+            try {
+
+                embeddedservice_bootstrap.settings.language = 'en_US';
+
+                embeddedservice_bootstrap.init(
+
+                    '00DdL00000OOPsS',
+
+                    'LoanChatDeployment',
+
+                    'https://orgfarm-3ec72874f6.my.site.com/ESWLoanChatDeployment1746004090566',
+
+                    {
+
+                        scrt2URL: 'https://orgfarm-3ec72874f6.my.salesforce-scrt.com'
+
+                    }
+
+                );
+
+            } catch (err) {
+
+                console.error('Error loading Embedded Messaging: ', err);
+
+            }
+
+        };
+
+    </script>
+
+    <script type='text/javascript' src='https://orgfarm-3ec72874f6.my.site.com/ESWLoanChatDeployment1746004090566/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+</apex:page>

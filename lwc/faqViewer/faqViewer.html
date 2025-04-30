@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Frequently Asked Questions">
+        <template for:each={faqs} for:item="faq">
+            <div key={faq.id} class="slds-p-around_small slds-border_bottom">
+                <p><strong>Q:</strong> {faq.question}</p>
+                <p><strong>A:</strong> {faq.answer}</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

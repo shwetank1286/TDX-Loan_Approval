@@ -1,0 +1,60 @@
+<template>
+    <lightning-card title="Apply for a Loan" icon-name="custom:custom63">
+        <div class="slds-p-around_medium">
+            <lightning-textarea
+                label="What would you like to do?"
+                value={userQuery}
+                onchange={handleQuery}>
+            </lightning-textarea>
+
+            <lightning-combobox
+                label="Loan Type"
+                value={loanType}
+                options={loanOptions}
+                onchange={handleLoanType}>
+            </lightning-combobox>
+
+            <lightning-input 
+                type="number" 
+                label="Amount Requested" 
+                value={amount} 
+                onchange={handleAmount}>
+            </lightning-input>
+
+            <lightning-input 
+                type="number" 
+                label="Interest Rate (%)" 
+                value={interestRate} 
+                onchange={handleRate}>
+            </lightning-input>
+
+            <lightning-input 
+                type="text" 
+                label="Your Name" 
+                value={applicantName} 
+                onchange={handleName}>
+            </lightning-input>
+
+            <lightning-input 
+                type="email" 
+                label="Your Email" 
+                value={applicantEmail} 
+                onchange={handleEmail}>
+            </lightning-input>
+
+            <lightning-button
+                variant="brand"
+                label="Submit Request"
+                onclick={handleSubmit}
+                class="slds-m-top_medium">
+            </lightning-button>
+
+            <template if:true={success}>
+                <p class="slds-text-color_success">Loan submitted successfully! ID: {recordId}</p>
+            </template>
+            <template if:true={error}>
+                <p class="slds-text-color_error">Error: {error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
